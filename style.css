@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background-color: #f2f6fa;
+}
+
+h1, h2 {
+  color: #2e3a59;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  margin-top: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+#summary, #results {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+canvas {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+}

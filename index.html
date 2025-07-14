@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crypto Investment Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Crypto Investment Simulator</h1>
+
+  <form id="simForm">
+    <label>Initial investment ($): <input type="number" id="initial" value="1000" required></label><br>
+
+    <label>Recurring investment ($): <input type="number" id="recurring" value="100" required></label><br>
+
+    <label>Investment frequency:
+      <select id="frequency">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly" selected>Monthly</option>
+        <option value="yearly">Yearly</option>
+      </select>
+    </label><br>
+
+    <label>Annual return rate (%): <input type="number" id="annualReturn" value="10" step="0.1" required></label><br>
+
+    <label>Years to simulate: <input type="number" id="years" value="10" required></label><br>
+
+    <label>Target final value (optional): <input type="number" id="target" placeholder="Leave blank if no target"></label><br>
+
+    <button type="submit">Simulate</button>
+  </form>
+
+  <h2>Summary</h2>
+  <div id="summary"></div>
+
+  <h2>Growth Chart</h2>
+  <canvas id="growthChart" width="800" height="400"></canvas>
+
+  <h2>Yearly Breakdown</h2>
+  <button id="downloadBtn">Download CSV</button>
+  <table id="breakdownTable">
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Balance ($)</th>
+        <th>Total Invested ($)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
