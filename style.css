@@ -1,51 +1,61 @@
+/* Set overall font and page background with some margin */
 body {
-  font-family: Arial, sans-serif;
-  margin: 30px;
-  background-color: #f2f6fa;
+  font-family: Arial, sans-serif; /* Use a clean, readable font */
+  margin: 30px; /* Space around the page content */
+  background-color: #f2f6fa; /* Light blue-ish background */
 }
 
+/* Style for main and secondary headings */
 h1, h2 {
-  color: #2e3a59;
+  color: #2e3a59; /* Dark blue text color */
 }
 
+/* Labels for form inputs displayed as block with spacing above */
 label {
-  display: block;
-  margin-top: 10px;
+  display: block; /* Each label on its own line */
+  margin-top: 10px; /* Space above each label */
 }
 
+/* Style inputs, selects, and buttons with spacing */
 input, select, button {
-  margin-top: 5px;
+  margin-top: 5px; /* Space above each form element */
 }
 
+/* Extra padding and margin for buttons */
 button {
-  padding: 5px 10px;
-  margin-top: 10px;
+  padding: 5px 10px; /* Button size for easier clicking */
+  margin-top: 10px; /* Space above buttons */
 }
 
+/* Style the summary and results containers */
 #summary, #results {
-  margin-top: 20px;
-  padding: 15px;
-  background: #ffffff;
-  border: 1px solid #ddd;
+  margin-top: 20px; /* Space above these sections */
+  padding: 15px; /* Padding inside the box */
+  background: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light gray border */
 }
 
+/* Style for tables */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+  width: 100%; /* Full width of container */
+  border-collapse: collapse; /* Remove double borders */
+  margin-top: 15px; /* Space above the table */
 }
 
+/* Add border to table, headers, and cells */
 table, th, td {
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* Light gray border */
 }
 
+/* Padding and center text for headers and cells */
 th, td {
-  padding: 8px;
-  text-align: center;
+  padding: 8px; /* Space inside cells */
+  text-align: center; /* Center text */
 }
 
+/* Style the chart canvas */
 canvas {
-  margin-top: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
+  margin-top: 20px; /* Space above the chart */
+  background: #fff; /* White background */
+  border: 1px solid #ccc; /* Light gray border */
 }
