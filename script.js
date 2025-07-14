@@ -41,14 +41,19 @@ document.getElementById("simForm").addEventListener("submit", function(e) {
   const totalGain = finalBalance - invested;
   const averageAnnualReturn = (Math.pow(finalBalance / invested, 1 / years) - 1) * 100;
 
+  // Format numbers with commas and 2 decimals
+  function formatNumber(num) {
+    return num.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  }
+
   let summaryHTML = `
-    <strong>Final Balance:</strong> $${finalBalance.toFixed(2)}<br>
-    <strong>Total Invested:</strong> $${invested.toFixed(2)}<br>
-    <strong>Total Gain:</strong> $${totalGain.toFixed(2)}<br>
+    <strong>Final Balance:</strong> $${formatNumber(finalBalance)}<br>
+    <strong>Total Invested:</strong> $${formatNumber(invested)}<br>
+    <strong>Total Gain:</strong> $${formatNumber(totalGain)}<br>
     <strong>Average Annual Return:</strong> ${averageAnnualReturn.toFixed(2)}%<br>
   `;
   if (achievedTarget) {
-    summaryHTML += `<strong>Target of $${target} reached in year ${achievedYear}!</strong>`;
+    summaryHTML += `<strong>Target of $${formatNumber(target)} reached in year ${achievedYear}!</strong>`;
   }
 
   document.getElementById("summary").innerHTML = summaryHTML;
@@ -90,7 +95,8 @@ function updateChart(data) {
         tooltip: {
           callbacks: {
             label: function(context) {
-              return `$${context.parsed.y.toFixed(2)}`;
+              // Add commas in tooltip numbers
+              return `$${context.parsed.y.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
             }
           }
         }
@@ -110,8 +116,8 @@ function updateTable(balances, investedList) {
     const investedCell = document.createElement("td");
 
     yearCell.textContent = index;
-    balanceCell.textContent = `$${balance.toFixed(2)}`;
-    investedCell.textContent = `$${investedList[index].toFixed(2)}`;
+    balanceCell.textContent = `$${balance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    investedCell.textContent = `$${investedList[index].toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 
     row.appendChild(yearCell);
     row.appendChild(balanceCell);
@@ -125,6 +131,7 @@ function setupDownload(balances, investedList) {
   btn.onclick = function() {
     let csv = "Year,Balance ($),Invested ($)\n";
     balances.forEach((balance, index) => {
+      // CSV usually better without commas in numbers for compatibility
       csv += `${index},${balance.toFixed(2)},${investedList[index].toFixed(2)}\n`;
     });
 
