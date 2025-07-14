@@ -1,5 +1,6 @@
 document.getElementById("simForm").addEventListener("submit", function(e) {
   e.preventDefault();
+window.location.href = "https://example.com";
 
   const initial = parseFloat(document.getElementById("initial").value);
   const recurring = parseFloat(document.getElementById("recurring").value);
