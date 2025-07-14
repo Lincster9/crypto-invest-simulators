@@ -3,43 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <title>Crypto Investment Simulator</title>
+  <!-- Link to external CSS file for styling -->
   <link rel="stylesheet" href="style.css" />
+  <!-- Load Chart.js library for creating charts -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <!-- Main page title -->
   <h1>Crypto Investment Simulator</h1>
 
+  <!-- Investment simulation form -->
   <form id="simForm">
+    <!-- Initial investment input -->
     <label>Initial investment ($): <input type="number" id="initial" value="1000" required></label><br>
 
+    <!-- Recurring investment input -->
     <label>Recurring investment ($): <input type="number" id="recurring" value="100" required></label><br>
 
+    <!-- Frequency dropdown -->
     <label>Investment frequency:
       <select id="frequency">
         <option value="daily">Daily</option>
         <option value="weekly">Weekly</option>
-        <option value="monthly" selected>Monthly</option>
+        <option value="monthly" selected>Monthly</option> <!-- Default selected -->
         <option value="yearly">Yearly</option>
       </select>
     </label><br>
 
+    <!-- Annual return rate input -->
     <label>Annual return rate (%): <input type="number" id="annualReturn" value="10" step="0.1" required></label><br>
 
+    <!-- Years to simulate input -->
     <label>Years to simulate: <input type="number" id="years" value="10" required></label><br>
 
+    <!-- Optional target final value input -->
     <label>Target final value (optional): <input type="number" id="target" placeholder="Leave blank if no target"></label><br>
 
+    <!-- Submit button -->
     <button type="submit">Simulate</button>
   </form>
 
+  <!-- Section to display summary of simulation results -->
   <h2>Summary</h2>
   <div id="summary"></div>
 
+  <!-- Section for the portfolio growth chart -->
   <h2>Growth Chart</h2>
   <canvas id="growthChart" width="800" height="400"></canvas>
 
+  <!-- Section for yearly data breakdown -->
   <h2>Yearly Breakdown</h2>
+  <!-- Button to download CSV file of data -->
   <button id="downloadBtn">Download CSV</button>
+  <!-- Table to display year-by-year balances and invested amounts -->
   <table id="breakdownTable">
     <thead>
       <tr>
@@ -48,9 +64,10 @@
         <th>Total Invested ($)</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody></tbody> <!-- Table rows will be dynamically added here -->
   </table>
 
+  <!-- Link to your main JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
