@@ -22,7 +22,7 @@ document.getElementById("simForm").addEventListener("submit", function(e) {
   let achievedYear = 0;
 
   for (let year = 1; year <= years; year++) {
-    for (let period = 0; period < 100; period++) {
+    for (let period = 0; period < periodsPerYear; period++) {
       total += recurring;
       invested += recurring;
       total *= 1 + (annualReturn / periodsPerYear);
